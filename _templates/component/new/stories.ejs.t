@@ -9,6 +9,6 @@ export default {
   args: {},
 };
 
-export const Primary = () => {
+export const Default = () => {
   return `<<%= h.changeCase.param(componentName) %> />`;
 };
