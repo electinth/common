@@ -1,4 +1,4 @@
-import { html, define } from "hybrids";
+import { html, define } from 'hybrids';
 
 export function increaseCount(host) {
   host.count += 1;
@@ -11,4 +11,4 @@ export const SimpleCounter = {
   `,
 };
 
-define("simple-counter", SimpleCounter);
+define('simple-counter', SimpleCounter);

@@ -1,9 +1,9 @@
-import ".";
+import '.';
 
 export default {
-  title: "Simple Counter",
+  title: 'Simple Counter',
   argTypes: {
-    count: { control: "number" },
+    count: { control: 'number' },
   },
   args: {
     count: 0,
