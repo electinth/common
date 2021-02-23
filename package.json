@@ -10,7 +10,7 @@
     "build": "parcel build index.js",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "lint": "eslint ./components/**/*.js --fix"
+    "lint": "eslint . --fix"
   },
   "dependencies": {
     "hybrids": "^4.3.4"

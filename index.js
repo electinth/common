@@ -1,1 +1,1 @@
-import "./components/simple-counter";
+import './components/simple-counter';

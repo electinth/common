@@ -1,4 +1,4 @@
-import '.';
+import './simple-counter';
 
 export default {
   title: 'Simple Counter',
