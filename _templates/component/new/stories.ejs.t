@@ -1,7 +1,14 @@
 ---
-to: components/<%= h.changeCase.param(componentName) %>.stories.js
+to: components/<%= h.changeCase.param(componentName) %>/<%= h.changeCase.param(componentName) %>.stories.js
 ---
-import './<%= h.changeCase.param(componentName) %>';
+import { define } from 'hybrids';
+import <%= h.changeCase.pascal(componentName) %> from '.';
+
+define({ <%= h.changeCase.pascal(componentName) %> });
+
+const Template = () => {
+  return `<<%= h.changeCase.param(componentName) %> />`;
+};
 
 export default {
   title: '<%= h.changeCase.title(componentName) %>',
@@ -9,6 +16,4 @@ export default {
   args: {},
 };
 
-export const Default = () => {
-  return `<<%= h.changeCase.param(componentName) %> />`;
-};
+export const Default = Template.bind({});

@@ -1,4 +1,16 @@
-import './social-sharer';
+import { define } from 'hybrids';
+import SocialSharer from '.';
+
+define({ SocialSharer });
+
+const Template = ({ url, light, hideLabel, vertical }) => `
+  <social-sharer
+    url="${url}"
+    ${light ? 'light' : ''}
+    ${hideLabel ? 'hide-label' : ''}
+    ${vertical ? 'vertical' : ''}
+  />
+`;
 
 export default {
   title: 'Social Sharer',
@@ -15,14 +27,6 @@ export default {
     vertical: false,
   },
 };
-
-const Template = ({ url, light, hideLabel, vertical }) => `
-    <social-sharer
-      url="${url}"
-      ${light ? 'light' : ''}
-      ${hideLabel ? 'hide-label' : ''}
-      ${vertical ? 'vertical' : ''}
-    />`;
 
 export const Default = Template.bind({});
 

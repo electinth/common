@@ -1,10 +1,10 @@
 ---
-to: components/<%= h.changeCase.param(componentName) %>.js
+to: components/<%= h.changeCase.param(componentName) %>/index.js
 ---
-import { html, define } from 'hybrids';
+import { html } from 'hybrids';
 
-export const <%= h.changeCase.pascal(componentName) %> = {
+const <%= h.changeCase.pascal(componentName) %> = {
   render: () => html`<div><%= h.changeCase.pascal(componentName) %></div>`,
 };
 
-define('<%= h.changeCase.param(componentName) %>', <%= h.changeCase.pascal(componentName) %>);
+export default <%= h.changeCase.pascal(componentName) %>;
