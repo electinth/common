@@ -10,6 +10,7 @@
     "build": "parcel build index.js",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
+    "new": "hygen component new",
     "lint": "eslint . --fix"
   },
   "dependencies": {
@@ -25,6 +26,7 @@
     "eslint": "^7.20.0",
     "eslint-config-prettier": "^8.0.0",
     "eslint-plugin-prettier": "^3.3.1",
+    "hygen": "^6.0.4",
     "parcel": "^1.12.4",
     "prettier": "^2.2.1"
   }
