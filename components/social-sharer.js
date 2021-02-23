@@ -3,7 +3,9 @@ import { html, define, svg } from 'hybrids';
 export const SocialSharer = {
   url: '',
   light: false,
-  render: ({ url, light }) => {
+  hideLabel: false,
+  vertical: false,
+  render: ({ url, light, hideLabel, vertical }) => {
     const fillColor = light ? 'white' : 'black';
     const encodedUrl = encodeURI(url);
 
@@ -59,14 +61,32 @@ export const SocialSharer = {
     ];
 
     return html`
-      <div style="display: flex; flex-direction: row;">
+      <div
+        style="${{
+          display: 'flex',
+          flexDirection: vertical ? 'column' : 'row',
+        }}"
+      >
+        ${!hideLabel &&
+        html`
+          <div style="display: flex;">
+            <span
+              style="${{
+                margin: vertical ? '0' : 'auto',
+              }}"
+              >Share</span
+            >
+          </div>
+        `}
         ${socialLinks.map(
           ({ url, svgContent }) => html`
             <a
               href="${url}"
               target="_blank"
               rel="noopener noreferrer"
-              style="margin: 0 4px;"
+              style="${{
+                margin: vertical ? '4px 0 0 0' : '0 0 0 8px',
+              }}"
             >
               <svg
                 width="40"
