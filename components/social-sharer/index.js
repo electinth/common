@@ -1,4 +1,4 @@
-import { html, svg } from 'hybrids';
+import { define, html, svg } from 'hybrids';
 import { setupTailwind } from '../../utils/twind';
 
 const { tw, parseSheet } = setupTailwind();
@@ -95,4 +95,4 @@ const SocialSharer = {
   },
 };
 
-export default SocialSharer;
+export default define(null, SocialSharer);

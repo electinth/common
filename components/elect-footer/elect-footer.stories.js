@@ -1,7 +1,6 @@
-import { define } from 'hybrids';
 import ElectFooter from '.';
 
-define({ ElectFooter });
+customElements.define('elect-footer', ElectFooter);
 
 const Template = () => {
   return `<elect-footer />`;

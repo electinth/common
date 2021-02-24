@@ -1,4 +1,4 @@
-import { html } from 'hybrids';
+import { define, html } from 'hybrids';
 import { setupTailwind } from '../../utils/twind';
 import { boonmeIcon, iLawIcon, punchUpIcon } from './icons/companies';
 import { electLogo } from './icons/elect';
@@ -161,4 +161,4 @@ const ElectFooter = {
     `.style(parseSheet()),
 };
 
-export default ElectFooter;
+export default define(null, ElectFooter);

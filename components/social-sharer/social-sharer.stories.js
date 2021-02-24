@@ -1,7 +1,6 @@
-import { define } from 'hybrids';
 import SocialSharer from '.';
 
-define({ SocialSharer });
+customElements.define('social-sharer', SocialSharer);
 
 const Template = ({ url, light, hideLabel, vertical }) => `
   <social-sharer
