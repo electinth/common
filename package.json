@@ -1,5 +1,5 @@
 {
-  "name": "common",
+  "name": "elect-common",
   "version": "1.0.0",
   "description": "ELECT's reusable component repository",
   "main": "index.js",
