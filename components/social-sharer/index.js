@@ -1,4 +1,7 @@
 import { html, svg } from 'hybrids';
+import { setupTailwind } from '../../utils/twind';
+
+const { tw, parseSheet } = setupTailwind();
 
 const SocialSharer = {
   url: '',
@@ -62,33 +65,19 @@ const SocialSharer = {
 
     return html`
       <div
-        style="${{
-          display: 'flex',
-          flexDirection: vertical ? 'column' : 'row',
-        }}"
+        class="${tw(
+          `flex ${vertical ? 'flex-col space-y-2' : 'flex-row space-x-4'}`,
+        )}"
       >
         ${!hideLabel &&
         html`
-          <div style="display: flex;">
-            <span
-              style="${{
-                margin: vertical ? '0' : 'auto 12px auto 0',
-                color,
-              }}"
-              >Share</span
-            >
+          <div class="${tw('flex')}">
+            <span class="${{ [tw('m-auto')]: !vertical }}">Share</span>
           </div>
         `}
         ${socialLinks.map(
           ({ url, svgContent }) => html`
-            <a
-              href="${url}"
-              target="_blank"
-              rel="noopener noreferrer"
-              style="${{
-                margin: vertical ? '4px 0 0 0' : '0 0 0 8px',
-              }}"
-            >
+            <a href="${url}" target="_blank" rel="noopener noreferrer">
               <svg
                 width="40"
                 height="41"
@@ -102,7 +91,7 @@ const SocialSharer = {
           `,
         )}
       </div>
-    `;
+    `.style(parseSheet());
   },
 };
 

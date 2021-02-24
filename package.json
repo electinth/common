@@ -14,7 +14,8 @@
     "lint": "eslint . --fix"
   },
   "dependencies": {
-    "hybrids": "^4.3.4"
+    "hybrids": "^4.3.4",
+    "twind": "^0.15.4"
   },
   "devDependencies": {
     "@babel/core": "^7.13.1",
