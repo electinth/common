@@ -74,7 +74,9 @@ const SocialSharer = {
         ${!hideLabel &&
         html`
           <div class="${tw('flex')}">
-            <span class="${{ [tw('m-auto')]: !vertical }}">Share</span>
+            <span class="${{ [tw('m-auto')]: !vertical }}" style="${{ color }}"
+              >Share</span
+            >
           </div>
         `}
         ${socialLinks.map(
