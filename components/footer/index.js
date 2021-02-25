@@ -43,7 +43,7 @@ const followLinks = [
   },
 ];
 
-const ElectFooter = {
+const Footer = {
   render: () =>
     html`
       <div
@@ -161,4 +161,4 @@ const ElectFooter = {
     `.style(parseSheet()),
 };
 
-export default define(null, ElectFooter);
+export default define(null, Footer);

@@ -12,7 +12,7 @@ const Template = ({ url, light, hideLabel, vertical }) => `
 `;
 
 export default {
-  title: 'Social Sharer',
+  title: 'Web Components/Social Sharer',
   argTypes: {
     url: { control: 'text' },
     light: { control: 'boolean' },

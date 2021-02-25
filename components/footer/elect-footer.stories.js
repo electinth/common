@@ -1,13 +1,13 @@
-import ElectFooter from '.';
+import Footer from '.';
 
-customElements.define('elect-footer', ElectFooter);
+customElements.define('elect-footer', Footer);
 
 const Template = () => {
   return `<elect-footer />`;
 };
 
 export default {
-  title: 'Elect Footer',
+  title: 'Web Components/Footer',
   argTypes: {},
   args: {},
 };
