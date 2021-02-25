@@ -48,7 +48,7 @@ const ElectFooter = {
     html`
       <div
         class="${tw(
-          'grid grid-cols-2 md:grid-cols-4 lg:grid-cols-3 px-8 py-16 bg-black text-white',
+          'grid grid-cols-2 md:grid-cols-4 lg:grid-cols-3 px-8 py-16 bg-black text-white font-body',
         )}"
       >
         <div

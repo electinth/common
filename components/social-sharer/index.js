@@ -66,7 +66,9 @@ const SocialSharer = {
     return html`
       <div
         class="${tw(
-          `flex ${vertical ? 'flex-col space-y-2' : 'flex-row space-x-4'}`,
+          `flex ${
+            vertical ? 'flex-col space-y-2' : 'flex-row space-x-4'
+          } font-body`,
         )}"
       >
         ${!hideLabel &&
