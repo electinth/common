@@ -92,7 +92,7 @@ const Footer = {
                 <a
                   href=${link}
                   class="${tw(
-                    'block hover:bg-white p-1 hover:text-black font-heading text-12 md:text-14 lg:text-16',
+                    'block hover:bg-white p-1 hover:text-black font-heading text-sm md:text-base',
                   )}"
                 >
                   ${text}
@@ -106,14 +106,14 @@ const Footer = {
           <div class="${tw('flex flex-col space-y-1')}">
             <p
               class="${tw(
-                'font-heading text-10 md:text-12 lg:text-14 font-black',
+                'font-heading text-xs md:text-sm lg:text-base font-black',
               )}"
             >
               ABOUT US
             </p>
             <a
               href="https://elect.in.th/about/"
-              class="${tw('hover:underline text-10 md:text-11 lg:text-12')}"
+              class="${tw('hover:underline text-xs md:text-sm lg:text-sm')}"
             >
               เราคือใคร.. ทำไมต้อง Elect?
             </a>
@@ -121,14 +121,14 @@ const Footer = {
           <div class="${tw('flex flex-col space-y-1')}">
             <p
               class="${tw(
-                'font-heading text-10 md:text-12 lg:text-14 font-black',
+                'font-heading text-xs md:text-sm lg:text-base font-black',
               )}"
             >
               CONTACT US
             </p>
             <a
               href="mailto:contact@elect.in.th"
-              class="${tw('hover:underline text-10 md:text-11 lg:text-12')}"
+              class="${tw('hover:underline text-xs md:text-11 lg:text-sm')}"
             >
               E-mail : contact@elect.in.th
             </a>
@@ -136,7 +136,7 @@ const Footer = {
           <div class="${tw('flex flex-col space-y-1')}">
             <p
               class="${tw(
-                'font-heading text-10 md:text-12 lg:text-14 font-black',
+                'font-heading text-xs md:text-sm lg:text-base font-black',
               )}"
             >
               FOLLOW US

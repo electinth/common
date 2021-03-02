@@ -73,7 +73,7 @@ const SocialSharer = {
       >
         ${!hideLabel &&
         html`
-          <div class="${tw('flex')}">
+          <div class="${tw('flex text-sm')}">
             <span class="${{ [tw('m-auto')]: !vertical }}" style="${{ color }}"
               >Share</span
             >
