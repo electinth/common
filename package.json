@@ -1,6 +1,6 @@
 {
-  "name": "elect-common",
-  "version": "0.1.0",
+  "name": "@electinth/common",
+  "version": "1.0.0",
   "description": "ELECT's reusable component repository",
   "main": "dist/index.js",
   "repository": "https://github.com/electinth/common.git",
