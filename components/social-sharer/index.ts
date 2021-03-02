@@ -1,14 +1,21 @@
-import { define, html, svg } from 'hybrids';
+import { define, html, Hybrids, svg } from 'hybrids';
 import { setupTailwind } from '../../utils/twind';
 
 const { tw, parseSheet } = setupTailwind();
 
-const SocialSharer = {
+interface SocialSharer extends HTMLElement {
+  url: string;
+  light?: boolean;
+  hideLabel?: boolean;
+  vertical?: boolean;
+}
+
+const SocialSharer: Hybrids<SocialSharer> = {
   url: '',
   light: false,
   hideLabel: false,
   vertical: false,
-  render: ({ url, light, hideLabel, vertical }) => {
+  render: ({ url, light = false, hideLabel = false, vertical = false }) => {
     const color = light ? 'white' : 'black';
     const encodedUrl = encodeURI(url);
 
@@ -74,7 +81,7 @@ const SocialSharer = {
         ${!hideLabel &&
         html`
           <div class="${tw('flex text-sm')}">
-            <span class="${{ [tw('m-auto')]: !vertical }}" style="${{ color }}"
+            <span class="${tw({ 'm-auto': !vertical })}" style="${{ color }}"
               >Share</span
             >
           </div>
