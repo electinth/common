@@ -1,8 +1,8 @@
 {
   "name": "elect-common",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "ELECT's reusable component repository",
-  "main": "index.js",
+  "main": "dist/index.js",
   "repository": "https://github.com/electinth/common.git",
   "author": "Th1nkK1D <witheep@gmail.com>",
   "license": "MIT",
@@ -47,5 +47,8 @@
   },
   "lint-staged": {
     "*.js": "eslint --cache --fix"
-  }
+  },
+  "files": [
+    "dist/**/*"
+  ]
 }
