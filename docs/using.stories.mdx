@@ -1,0 +1,81 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Guide/2. Using the library" />
+
+# 2. Using the library
+
+## 2.1 Typography
+
+Typography assets are hosted on ELECT server thus it can be used by adding the stylesheet to the HTML head
+
+```html
+<link rel="stylesheet" href="https://elect.in.th/assets/typography.css" />
+```
+
+Then the folowing font family and coresponded weight will be available to used via css or [Tailwind](https://tailwindcss.com/) config
+
+- **Kondolar Thai** regular and 900
+- **Anuphan** regular and 600
+- **Bai Jamjuri** regular and 900
+
+```css
+font-family: 'Kondolar Thai, Serif';
+font-weight: 900;
+```
+
+## 2.2 Web Components
+
+Web components are published on [Github Packages repository](https://github.com/features/packages), We considered it over NPM because the package will belong to the github repository, not individual NPM account. Drawback is more configuration are required.
+
+### 2.2.1 Config NPM
+
+Add `.npmrc` file at the root of your project (same directory with `node_modules`), and config packages with @electinth scope to use Gitgub Packages repository.
+
+```
+@electinth:registry=https://npm.pkg.github.com
+```
+
+Create a [Github personal access token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) with `read:packages` and `repo` scope, then add it to NPM config to authorize Github Packages.
+
+```
+npm config set //npm.pkg.github.com/:_authToken <personal_access_token>
+```
+
+**NOTE:** For Github Actions workflow, the personal access token can be replaced by `${{ secrets.GITHUB_TOKEN }}`
+
+More detail can be found on [Github Packages Docs](https://docs.github.com/en/packages/guides/configuring-npm-for-use-with-github-packages#installing-a-package)
+
+### 2.2.2 Install the package
+
+Package can be installed using `npm`
+
+```
+npm i @electinth/common
+```
+
+### 2.2.3 Register the components
+
+Component can be imported and register using standard [Web Components API](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) by calling `customElements.define` with given tag name and coresponded component.
+
+```js
+import { Footer, NavigationBar } from '@electinth/common/';
+
+customElements.define('elect-footer', Footer);
+customElements.define('navigation-bar', NavigationBar);
+```
+
+**NOTE:** `customElements` is not available on the serverside, so where to register it is depends on the framework. (Please register only once)
+
+- **Sapper**: register in `src/client.ts`
+
+### 2.2.4 Using the Components
+
+After the component is registered, it can be used like regular html tag
+
+```html
+<navigation-bar title-text="PROJECT NAME">
+  <!-- slot -->
+</navigation-bar>
+```
+
+Available components and coresponded properties can be found in the **WEB COMPONENTS** section on the left panel.
