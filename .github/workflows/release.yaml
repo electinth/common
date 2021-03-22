@@ -1,18 +1,23 @@
-name: Storybook
+name: Publish Package
 
 on:
-  push:
-    branches: [main]
+  release:
+    types: [created]
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v1
         with:
-          node-version: '12'
+          node-version: 12
+          registry-url: https://npm.pkg.github.com/
       - run: yarn install
+      - run: yarn build
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - run: yarn build-storybook
       - uses: peaceiris/actions-gh-pages@v3
         with:
