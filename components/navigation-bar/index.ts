@@ -48,13 +48,17 @@ const NavigationBar: Hybrids<NavigationBar> = {
     const color = dark ? 'white' : 'black';
 
     return html`<div
-      class="${tw('flex flex-row px-3 bg-white h-10 md:h-12 z-10')}"
+      class="${tw('flex flex-col md:flex-row bg-white')}"
       style="${{ backgroundColor: dark ? 'black' : 'white' }}"
     >
-      <div class="${tw('md:flex-1 flex')}">
+      <div class="${tw('md:flex-1 flex my-auto p-3 h-10 md:h-12')}">
         <a href="./" class="${tw('h-4 md:h-5 my-auto')}">
           ${logoUrl
-            ? html`<img src="${logoUrl}" alt="ELECT" class="h-4 md:h-5" />`
+            ? html`<img
+                src="${logoUrl}"
+                alt="ELECT"
+                class="${tw('h-4 md:h-5')}"
+              />`
             : html`<svg
                 class="${tw('h-4 md:h-5')}"
                 viewBox="0 0 83 16"
@@ -77,7 +81,7 @@ const NavigationBar: Hybrids<NavigationBar> = {
         </div>
       `}
 
-      <div class="${tw('flex-1 flex justify-end space-x-1 md:space-x-4')}">
+      <div class="${tw('flex-1 flex md:justify-end md:pr-3')}">
         <slot />
       </div>
     </div>`.style(parseSheet());

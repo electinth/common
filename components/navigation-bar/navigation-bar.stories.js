@@ -33,13 +33,13 @@ withTitle.args = { ...Default.args, titleText: 'CIVIL MOVEMENT 2020' };
 
 export const withSlot = Template.bind({});
 withSlot.args = {
-  ...Default.args,
+  ...withTitle.args,
   slot:
     '<div style="margin: auto 0; text-align:center; color: gray;">slot rendered here</div>',
 };
 
 export const withCustomLogo = Template.bind({});
 withCustomLogo.args = {
-  ...Default.args,
+  ...withTitle.args,
   logoUrl: 'https://via.placeholder.com/100x20',
 };
