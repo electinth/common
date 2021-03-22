@@ -4,7 +4,7 @@ import { setupTailwind } from '../../utils/twind';
 const { tw, parseSheet } = setupTailwind();
 
 interface SocialSharer extends HTMLElement {
-  url: string;
+  url?: string;
   light?: boolean;
   hideLabel?: boolean;
   vertical?: boolean;
@@ -17,7 +17,7 @@ const SocialSharer: Hybrids<SocialSharer> = {
   vertical: false,
   render: ({ url, light = false, hideLabel = false, vertical = false }) => {
     const color = light ? 'white' : 'black';
-    const encodedUrl = encodeURI(url);
+    const encodedUrl = encodeURI(url || window.location.href);
 
     const socialLinks = [
       {

@@ -20,7 +20,7 @@ export default {
     vertical: { control: 'boolean' },
   },
   args: {
-    url: 'https://elect.in.th',
+    url: '',
     light: false,
     hideLabel: false,
     vertical: false,
@@ -28,6 +28,9 @@ export default {
 };
 
 export const Default = Template.bind({});
+
+export const WithExplicitURL = Template.bind({});
+WithExplicitURL.args = { ...Default.args, url: 'https://elect.in.th' };
 
 export const Vertical = Template.bind({});
 Vertical.args = { ...Default.args, vertical: true };
