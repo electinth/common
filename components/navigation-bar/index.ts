@@ -38,17 +38,23 @@ interface NavigationBar extends HTMLElement {
   titleText?: string;
   dark?: boolean;
   logoUrl: string;
+  showSlotInNewRowOnMobile?: boolean;
 }
 
 const NavigationBar: Hybrids<NavigationBar> = {
   titleText: '',
   dark: false,
   logoUrl: '',
-  render: ({ titleText, dark, logoUrl }) => {
+  showSlotInNewRowOnMobile: false,
+  render: ({ titleText, dark, logoUrl, showSlotInNewRowOnMobile }) => {
     const color = dark ? 'white' : 'black';
 
     return html`<div
-      class="${tw('flex flex-col md:flex-row bg-white')}"
+      class="${tw(
+        `flex bg-white ${
+          showSlotInNewRowOnMobile ? 'flex-col md:flex-row' : 'flex-row'
+        }`,
+      )}"
       style="${{ backgroundColor: dark ? 'black' : 'white' }}"
     >
       <div class="${tw('md:flex-1 flex my-auto p-3 h-10 md:h-12')}">
@@ -81,7 +87,15 @@ const NavigationBar: Hybrids<NavigationBar> = {
         </div>
       `}
 
-      <div class="${tw('flex-1 flex md:justify-end md:pr-3')}">
+      <div
+        class="${tw(
+          `flex-1 flex ${
+            showSlotInNewRowOnMobile
+              ? 'md:justify-end md:pr-3'
+              : 'justify-end pr-3'
+          }`,
+        )}"
+      >
         <slot />
       </div>
     </div>`.style(parseSheet());

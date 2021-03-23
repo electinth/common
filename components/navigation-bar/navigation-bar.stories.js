@@ -2,10 +2,18 @@ import NavigationBar from '.';
 
 customElements.define('navigation-bar', NavigationBar);
 
-const Template = ({ titleText, slot, dark, logoUrl }) => `
+const Template = ({
+  titleText,
+  slot,
+  dark,
+  logoUrl,
+  showSlotInNewRowOnMobile,
+}) => `
   <navigation-bar title-text="${titleText}" ${
   dark ? 'dark' : ''
-} logo-url="${logoUrl}">
+} logo-url="${logoUrl}" ${
+  showSlotInNewRowOnMobile ? 'show-slot-in-new-row-on-mobile' : ''
+}>
     ${slot ? slot : ''}
   </navigation-bar>
 `;
@@ -17,12 +25,14 @@ export default {
     slot: { control: 'text' },
     dark: { control: 'boolean' },
     logoUrl: { control: 'text' },
+    showSlotInNewRowOnMobile: { control: 'boolean' },
   },
   args: {
     titleText: '',
     slot: '',
     dark: false,
     logoUrl: '',
+    showSlotInNewRowOnMobile: false,
   },
 };
 
