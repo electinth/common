@@ -11,7 +11,7 @@
     "build-storybook": "build-storybook",
     "new": "hygen component new",
     "lint": "eslint . --fix",
-    "build:components": "tsc",
+    "build:components": "node esbuild.mjs",
     "build:assets": "cp -rf assets dist && postcss dist/assets/*.css --replace",
     "build": "npm run build:components && npm run build:assets"
   },
@@ -31,7 +31,10 @@
     "@typescript-eslint/eslint-plugin": "^4.16.1",
     "@typescript-eslint/parser": "^4.16.1",
     "babel-loader": "^8.2.2",
+    "css": "^3.0.0",
     "cssnano": "^4.1.10",
+    "esbuild": "^0.11.19",
+    "esbuild-svelte": "^0.5.1",
     "eslint": "^7.20.0",
     "eslint-config-prettier": "^8.0.0",
     "eslint-plugin-prettier": "^3.3.1",
@@ -41,7 +44,12 @@
     "postcss": "^8.2.6",
     "postcss-cli": "^8.3.1",
     "prettier": "^2.2.1",
-    "typescript": "^4.2.2"
+    "svelte": "^3.38.2",
+    "svelte-preprocess": "^4.7.3",
+    "svelte-windicss-preprocess": "^3.5.3",
+    "tiny-glob": "^0.2.8",
+    "typescript": "^4.2.4",
+    "windicss": "^2.5.14"
   },
   "husky": {
     "hooks": {
