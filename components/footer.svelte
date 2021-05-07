@@ -46,7 +46,7 @@
 <div
   class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-3 px-8 py-16 bg-black text-white font-body"
 >
-  <div class="col-span-2 lg:col-span-1 flex flex-row md:flex-col mb-8 md:mb-0">
+  <div class="col-span-2 lg:col-span-1 flex flex-row md:(flex-col mb-8 mb-0)">
     <div class="flex-1 flex">
       <a href="https://elect.in.th" class="mb-auto w-20 md:w-28 lg:w-32 h-auto">
         {@html electLogo}
@@ -55,7 +55,7 @@
     <div class="flex-1 md:flex-grow-0 flex flex-row space-x-4">
       {#each companyLinks as { image, imageMd, url }}
         <a href={url} target="_blank" rel="noopener noreferrer">
-          <div src={image} class="md:hidden h-5 md:h-6">
+          <div src={image} class="h-5 md:(hidden h-6)">
             {@html image}
           </div>
           <div src={imageMd} class="hidden md:block h-4 lg:h-6">
@@ -71,7 +71,7 @@
       <div class="flex justify-start lg:justify-center">
         <a
           href={link}
-          class="block hover:bg-white p-1 hover:text-black font-heading text-sm md:text-base"
+          class="block p-1 hover:(bg-white text-black) font-heading text-sm md:text-base"
         >
           {text}
         </a>

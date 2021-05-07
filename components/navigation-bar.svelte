@@ -12,7 +12,7 @@
     ? 'flex-col md:flex-row'
     : 'flex-row'} {dark ? 'bg-black' : 'bg-white'}"
 >
-  <div class="md:flex-1 flex my-auto p-3 h-10 md:h-12">
+  <div class="flex my-auto p-3 h-10 md:(flex-1 h-12)">
     <a href="./" class="h-4 md:h-5 my-auto">
       {#if logoUrl}
         <img src={logoUrl} alt="ELECT" class="h-4 md:h-5" />
@@ -65,7 +65,7 @@
 
   <div
     class="flex-1 flex {showSlotInNewRowOnMobile
-      ? 'md:justify-end md:pr-3'
+      ? 'md:(justify-end pr-3)'
       : 'justify-end pr-3'}"
   >
     <slot />
