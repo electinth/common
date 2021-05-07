@@ -24,7 +24,9 @@ const transformStyleForWebComponent = {
       stylesheet: {
         ...stylesheetProperties,
         rules: rules.map(({ selectors, ...rest }) => ({
-          selectors: selectors.map(removeGlobalSelector),
+          selectors: selectors
+            ? selectors.map(removeGlobalSelector)
+            : undefined,
           ...rest,
         })),
       },
