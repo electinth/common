@@ -1,6 +1,4 @@
-import { html } from 'hybrids';
-
-export const facebookIcon = html`<svg
+export const facebookIcon = `<svg
   height="100%"
   viewBox="0 0 9 18"
   fill="none"
@@ -14,7 +12,7 @@ export const facebookIcon = html`<svg
   />
 </svg> `;
 
-export const twitterIcon = html`<svg
+export const twitterIcon = `<svg
   height="100%"
   viewBox="0 0 19 16"
   fill="none"
