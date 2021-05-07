@@ -45,9 +45,6 @@ const transformStyleForWebComponent = {
       esbuildSvelte({
         preprocess: [
           windiCss({
-            config: 'windi.config.ts',
-            // compile: true,
-            prefix: 'wd-',
             mode: 'prod',
           }),
           sveltePreprocess(),

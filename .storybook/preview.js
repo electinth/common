@@ -7,4 +7,10 @@ export const parameters = {
       locales: '',
     },
   },
+  controls: {
+    matchers: {
+      color: /(background|color)$/i,
+      date: /Date$/,
+    },
+  },
 };
