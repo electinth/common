@@ -3,8 +3,8 @@ const svelteWindi = require('svelte-windicss-preprocess');
 
 module.exports = {
   stories: [
-    '../stories/**/*.stories.mdx',
-    '../stories/**/*.stories.@(js|jsx|ts|tsx|svelte)',
+    '../docs/**/*.stories.mdx',
+    '../src/components/**/*.stories.@(js|jsx|ts|tsx|svelte)',
   ],
   addons: [
     '@storybook/addon-links',

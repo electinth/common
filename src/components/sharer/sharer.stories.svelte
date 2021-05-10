@@ -1,6 +1,6 @@
 <script>
   import { Meta, Template, Story } from '@storybook/addon-svelte-csf';
-  import SocialSharer from '../../components/sharer.svelte';
+  import SocialSharer from './sharer.wc.svelte';
 </script>
 
 <Meta

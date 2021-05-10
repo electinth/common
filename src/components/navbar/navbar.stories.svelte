@@ -1,6 +1,6 @@
 <script>
   import { Meta, Template, Story } from '@storybook/addon-svelte-csf';
-  import NavigationBar from '../../components/navbar.svelte';
+  import NavigationBar from './navbar.wc.svelte';
 </script>
 
 <Meta

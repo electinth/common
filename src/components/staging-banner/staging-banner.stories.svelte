@@ -1,6 +1,6 @@
 <script>
   import { Meta, Template, Story } from '@storybook/addon-svelte-csf';
-  import StagingBanner from '../../components/staging-banner.svelte';
+  import StagingBanner from './staging-banner.wc.svelte';
 </script>
 
 <Meta
