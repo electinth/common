@@ -1,10 +1,10 @@
 <script>
   import { Meta, Template, Story } from '@storybook/addon-svelte-csf';
-  import SocialSharer from '../../components/social-sharer.svelte';
+  import SocialSharer from '../../components/sharer.svelte';
 </script>
 
 <Meta
-  title="Components/social-sharer"
+  title="Components/sharer"
   component={SocialSharer}
   argTypes={{
     url: { control: 'text' },

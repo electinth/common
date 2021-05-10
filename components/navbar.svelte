@@ -1,4 +1,4 @@
-<svelte:options tag="navigation-bar" />
+<svelte:options tag="elect-navbar" />
 
 <script lang="ts">
   export let titleText: string = '';

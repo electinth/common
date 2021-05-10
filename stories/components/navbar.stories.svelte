@@ -1,10 +1,10 @@
 <script>
   import { Meta, Template, Story } from '@storybook/addon-svelte-csf';
-  import NavigationBar from '../../components/navigation-bar.svelte';
+  import NavigationBar from '../../components/navbar.svelte';
 </script>
 
 <Meta
-  title="Components/navigation-bar"
+  title="Components/navbar"
   component={NavigationBar}
   argTypes={{
     titleText: { control: 'text' },

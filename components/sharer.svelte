@@ -1,4 +1,4 @@
-<svelte:options tag="social-sharer" />
+<svelte:options tag="elect-sharer" />
 
 <script lang="ts">
   export let url: string = '';
