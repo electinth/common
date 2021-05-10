@@ -11,7 +11,7 @@
     "new": "hygen component new",
     "lint": "eslint . --fix",
     "build:components": "rm -rf dist/* && node src/utils/esbuild.mjs",
-    "build:assets": "cp -rf assets dist && postcss dist/assets/*.css --replace",
+    "build:assets": "cp -rf src/assets assets && postcss assets/*.css --replace",
     "build": "npm run build:components && npm run build:assets"
   },
   "devDependencies": {

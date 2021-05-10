@@ -108,4 +108,5 @@ storybook-static
 pnpm-lock.yaml
 
 # Built files
-./components
+components
+assets
