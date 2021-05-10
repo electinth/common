@@ -1,9 +1,9 @@
 <svelte:options tag="elect-footer" />
 
 <script lang="ts">
-  import { boonmeIcon, iLawIcon, punchUpIcon } from './footer/companies';
-  import { electLogo } from './footer/elect';
-  import { facebookIcon, twitterIcon } from './footer/social';
+  import { boonmeIcon, iLawIcon, punchUpIcon } from './companies';
+  import { electLogo } from './elect';
+  import { facebookIcon, twitterIcon } from './social';
 
   const internalLinks = [
     { text: 'VISUALIZATION', link: 'https://elect.in.th/visualization/' },
