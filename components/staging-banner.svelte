@@ -1,4 +1,4 @@
-<svelte:options tag="staging-banner" />
+<svelte:options tag="elect-staging-banner" />
 
 <script lang="ts">
   let productionUrl: string = '';
