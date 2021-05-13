@@ -47,35 +47,35 @@ More detail can be found on [Github Packages Docs](https://docs.github.com/en/pa
 
 ### 2.2.2 Install the package
 
-Package can be installed using `npm`
-
 ```
 npm i @electinth/common
 ```
 
-### 2.2.3 Register the components
+### 2.2.3 Import the components
 
-Component can be imported and register using standard [Web Components API](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) by calling `customElements.define` with given tag name and coresponded component.
+Import components that will be used in **Client-Side** code (Web Component is not working on serverside)
 
 ```js
-import { Footer, NavigationBar } from '@electinth/common/';
-
-customElements.define('elect-footer', Footer);
-customElements.define('navigation-bar', NavigationBar);
+import '@electinth/common/components/footer';
+import '@electinth/common/components/navbar';
+import '@electinth/common/components/sharer';
+import '@electinth/common/components/staging-banner';
 ```
 
-**NOTE:** `customElements` is not available on the serverside, so where to register it is depends on the framework. (Please register only once)
+For example:
 
-- **Sapper**: register in `src/client.ts`
+- **React**: `src/App.js`
+- **Sapper**: `src/client.ts`
+- **Nuxt**: Create [client-side plugin](https://nuxtjs.org/docs/2.x/directory-structure/plugins#client-or-server-side-only)
 
 ### 2.2.4 Using the Components
 
-After the component is registered, it can be used like regular html tag
+Elect components can be used with `elect-` prefix. For example with `navbar` component:
 
 ```html
-<navigation-bar title-text="PROJECT NAME">
+<elect-navbar title="PROJECT NAME">
   <!-- slot -->
-</navigation-bar>
+</elect-navbar>
 ```
 
-Available components and coresponded properties can be found in the **WEB COMPONENTS** section on the left panel.
+Available components and coresponded properties can be found in the **COMPONENTS** section on the left panel.
