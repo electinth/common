@@ -8,7 +8,7 @@
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "new": "hygen component new",
+    "create": "hygen component new",
     "lint": "eslint . --fix",
     "build:components": "sh build-components.sh",
     "build:assets": "cp -rf src/assets assets && postcss assets/*.css --replace",

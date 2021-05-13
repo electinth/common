@@ -1,19 +1,27 @@
 ---
-to: components/<%= h.changeCase.param(componentName) %>/<%= h.changeCase.param(componentName) %>.stories.js
+to: src/components/<%= h.changeCase.param(componentName) %>/<%= h.changeCase.param(componentName) %>.stories.svelte
 ---
-import { define } from 'hybrids';
-import <%= h.changeCase.pascal(componentName) %> from '.';
+<script>
+  import { Meta, Template, Story } from '@storybook/addon-svelte-csf';
+  import <%= h.changeCase.pascal(componentName) %> from './<%= h.changeCase.param(componentName) %>.wc.svelte';
 
-define({ <%= h.changeCase.pascal(componentName) %> });
+</script>
 
-const Template = () => {
-  return `<<%= h.changeCase.param(componentName) %> />`;
-};
+<Meta
+  title="Components/<%= h.changeCase.param(componentName) %>"
+  component={<%= h.changeCase.pascal(componentName) %>}
+  argTypes={{
+    someprop: { control: 'text' },
+  }}
+/>
 
-export default {
-  title: '<%= h.changeCase.title(componentName) %>',
-  argTypes: {},
-  args: {},
-};
+<Template let:args>
+  <<%= h.changeCase.pascal(componentName) %> {...args} />
+</Template>
 
-export const Default = Template.bind({});
+<Story
+  name="Primary"
+  args={{
+    someprop: '',
+  }}
+/>
