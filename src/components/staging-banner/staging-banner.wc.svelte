@@ -1,7 +1,8 @@
 <svelte:options tag="elect-staging-banner" />
 
 <script lang="ts">
-  let productionUrl: string = '';
+  let productionurl: string = '';
+
 </script>
 
 <div class="bg-gray-600 text-white text-xs font-body px-4 py-2">
@@ -26,10 +27,10 @@
   <strong>คำเตือน</strong>
   เว็บไซต์นี้มีจุดประสงค์ในการทดสอบภายในทีม ELECT เท่านั้น อาจมีข้อมูลและการทำงานที่ไม่ถูกต้อง
   ทางทีมงานจะไม่รับผิดชอบข้อผิดพลาดใด ๆ ที่เกิดขึ้น
-  {#if productionUrl}
+  {#if productionurl}
     ท่านสามารถชมชิ้นงานจริงได้
     <a
-      href="${productionUrl}"
+      href="${productionurl}"
       target="_blank"
       rel="noopener noreferrer"
       class="underline"

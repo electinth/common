@@ -1,16 +1,17 @@
 <script>
   import { Meta, Template, Story } from '@storybook/addon-svelte-csf';
   import NavigationBar from './navbar.wc.svelte';
+
 </script>
 
 <Meta
   title="Components/navbar"
   component={NavigationBar}
   argTypes={{
-    titleText: { control: 'text' },
+    title: { control: 'text' },
     dark: { control: 'boolean' },
-    logoUrl: { control: 'text' },
-    showSlotInNewRowOnMobile: { control: 'boolean' },
+    logo: { control: 'text' },
+    mobilenewlineslot: { control: 'boolean' },
   }}
 />
 
@@ -25,13 +26,13 @@
 <Story
   name="With Title"
   args={{
-    titleText: 'CIVIL MOVEMENT 2020',
+    title: 'CIVIL MOVEMENT 2020',
   }}
 />
 
 <Story
   name="Custom Logo"
   args={{
-    logoUrl: 'https://via.placeholder.com/100x20',
+    logo: 'https://via.placeholder.com/100x20',
   }}
 />
