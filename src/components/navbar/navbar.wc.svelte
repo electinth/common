@@ -1,21 +1,22 @@
 <svelte:options tag="elect-navbar" />
 
 <script lang="ts">
-  export let titleText: string = '';
+  export let title: string = '';
   export let dark: boolean = false;
-  export let logoUrl: string = '';
-  export let showSlotInNewRowOnMobile: boolean = false;
+  export let logo: string = '';
+  export let mobilenewlineslot: boolean = false;
+
 </script>
 
 <div
-  class="flex bg-white {showSlotInNewRowOnMobile
-    ? 'flex-col md:flex-row'
+  class="flex bg-white md:flex-row {mobilenewlineslot
+    ? 'flex-col'
     : 'flex-row'} {dark ? 'bg-black' : 'bg-white'}"
 >
   <div class="flex my-auto p-3 h-10 md:(flex-1 h-12)">
     <a href="./" class="h-4 md:h-5 my-auto">
-      {#if logoUrl}
-        <img src={logoUrl} alt="ELECT" class="h-4 md:h-5" />
+      {#if logo}
+        <img src={logo} alt="ELECT" class="h-4 md:h-5" />
       {:else}
         <svg
           class="h-4 md:h-5 {dark ? 'text-white' : 'text-black'}"
@@ -55,16 +56,16 @@
       {/if}
     </a>
   </div>
-  {#if titleText}
+  {#if title}
     <div class="hidden md:flex">
       <a href="./" class="my-auto flex font-heading text-lg md:text-xl">
-        <span class={dark ? 'text-white' : 'text-black'}>{titleText}</span>
+        <span class={dark ? 'text-white' : 'text-black'}>{title}</span>
       </a>
     </div>
   {/if}
 
   <div
-    class="flex-1 flex {showSlotInNewRowOnMobile
+    class="flex-1 flex {mobilenewlineslot
       ? 'md:(justify-end pr-3)'
       : 'justify-end pr-3'}"
   >

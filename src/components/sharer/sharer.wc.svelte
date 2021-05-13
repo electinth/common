@@ -3,7 +3,7 @@
 <script lang="ts">
   export let url: string = '';
   export let light: boolean = false;
-  export let hideLabel: boolean = false;
+  export let hidelabel: boolean = false;
   export let vertical: boolean = false;
 
   $: encodedUrl = encodeURI(url || window.location.href);
@@ -58,6 +58,7 @@
       `,
     },
   ];
+
 </script>
 
 <div
@@ -66,7 +67,7 @@
     : 'flex-row space-x-4'}"
   class:text-white={light}
 >
-  {#if !hideLabel}
+  {#if !hidelabel}
     <div class="flex text-sm">
       <span class:m-auto={!vertical}>Share</span>
     </div>
