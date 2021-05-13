@@ -36,6 +36,9 @@ const transformStyleForWebComponent = {
       ...styleProperties
     } = css.parse(content);
 
+    console.log('--- ORIGINAL ----');
+    console.log(content);
+
     const transformedStyleObject = {
       ...styleProperties,
       stylesheet: {
@@ -43,6 +46,9 @@ const transformStyleForWebComponent = {
         rules: parseRules(rules),
       },
     };
+
+    console.log('--- PARSED ---');
+    console.log(css.stringify(transformedStyleObject));
 
     return {
       code: css.stringify(transformedStyleObject, { compress: true }),
