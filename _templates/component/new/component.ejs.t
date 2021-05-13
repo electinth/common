@@ -1,10 +1,12 @@
 ---
-to: components/<%= h.changeCase.param(componentName) %>/index.js
+to: src/components/<%= h.changeCase.param(componentName) %>/<%= h.changeCase.param(componentName) %>.wc.svelte
 ---
-import { html } from 'hybrids';
+<svelte:options tag="elect-<%= h.changeCase.param(componentName) %>" />
 
-const <%= h.changeCase.pascal(componentName) %> = {
-  render: () => html`<div><%= h.changeCase.pascal(componentName) %></div>`,
-};
+<script lang="ts">
+  export let someprop: string = '';
+</script>
 
-export default <%= h.changeCase.pascal(componentName) %>;
+<div>
+  elect-<%= h.changeCase.param(componentName) %> with someprop = {someprop}
+</div>
