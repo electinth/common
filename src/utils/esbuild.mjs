@@ -1,36 +1,33 @@
-import glob from 'tiny-glob';
 import { build } from 'esbuild';
 import esbuildSvelte from 'esbuild-svelte';
 import sveltePreprocess from 'svelte-preprocess';
 import { preprocess as windiCss } from 'svelte-windicss-preprocess';
 import transformStyleForWebComponent from './style.mjs';
 
-(async () => {
-  const components = await glob('src/components/**/*.wc.svelte');
+if (!process.argv[2]) {
+  console.error('Please specific entry point');
+  process.exit(1);
+}
 
-  components.forEach((componentPath) => {
-    const fileName = componentPath
-      .split('/')
-      .reverse()[0]
-      .replace('.wc.svelte', '.js');
+const entry = process.argv[2];
 
-    build({
-      entryPoints: [componentPath],
-      outfile: `./components/${fileName}`,
-      bundle: true,
-      outdir: '',
-      plugins: [
-        esbuildSvelte({
-          preprocess: [
-            windiCss({
-              mode: 'prod',
-            }),
-            sveltePreprocess(),
-            transformStyleForWebComponent,
-          ],
-          compileOptions: { customElement: true, css: true },
+const output = entry.split('/').reverse()[0].replace('.wc.svelte', '.js');
+
+await build({
+  entryPoints: [entry],
+  outfile: `./components/${output}`,
+  bundle: true,
+  outdir: '',
+  plugins: [
+    esbuildSvelte({
+      preprocess: [
+        windiCss({
+          mode: 'prod',
         }),
+        sveltePreprocess(),
+        transformStyleForWebComponent,
       ],
-    }).catch(() => process.exit(1));
-  });
-})();
+      compileOptions: { customElement: true },
+    }),
+  ],
+}).catch(() => process.exit(1));
