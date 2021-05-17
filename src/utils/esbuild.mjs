@@ -18,6 +18,7 @@ await build({
   outfile: `./components/${output}`,
   bundle: true,
   outdir: '',
+  inject: ['./src/utils/custom-element.js'],
   plugins: [
     esbuildSvelte({
       preprocess: [
