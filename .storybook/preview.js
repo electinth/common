@@ -3,7 +3,7 @@ export const parameters = {
   options: {
     storySort: {
       method: 'alphabetical',
-      order: ['Guide', 'Web Components'],
+      order: ['Guide', 'Components'],
       locales: '',
     },
   },

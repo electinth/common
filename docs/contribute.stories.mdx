@@ -4,6 +4,82 @@ import { Meta } from '@storybook/addon-docs/blocks';
 
 # 3. Contribute
 
-Since this project in under development. The API and practice is not stable yet.
+This project is an open source! Code is available on [Github](https://github.com/electinth/common)
 
-**This docs will be updated when ready for contribution**
+## 3.1 Set up project locally
+
+Clone from Github
+
+```
+git clone https://github.com/electinth/common.git
+```
+
+Install dependency
+
+```
+npm i
+```
+
+## 3.2 Create new component
+
+We have generator ready for creating new component simply by running
+
+```
+npm run create
+```
+
+Generator will ask component name. For example if we create a new component name `hello world`, the following files will be generated:
+
+**src/components/hello-world/hello-world.wc.svelte** - Main Svelte component
+
+```html
+<svelte:options tag="elect-hello-world" />
+
+<script lang="ts">
+  export let someprop: string = '';
+</script>
+
+<div>elect-hello-world with someprop = {someprop}</div>
+```
+
+**src/components/hello-world/hello-world.stories.svelte** - Coresponded Storybook stories
+
+```html
+<script>
+  import { Meta, Template, Story } from '@storybook/addon-svelte-csf';
+  import HelloWorld from './hello-world.wc.svelte';
+</script>
+
+<Meta title="Components/hello-world" component={HelloWorld} argTypes={{
+someprop: { control: 'text' } }} />
+
+<template let:args>
+  <HelloWorld {...args} />
+</template>
+
+<Story name="Primary" args={{ someprop: '' }} />
+```
+
+`hello-world` will be available in COMPONENTS section of Storybook and ready to be edited.
+
+More information about [Svelte Component](https://svelte.dev/docs) and [Storybook Stories](https://storybook.js.org/docs/svelte/writing-stories/introduction)
+
+## 3.3 Build the component
+
+Components should be built and test since compiling process is different from Storybook
+
+```
+npm run build:components
+```
+
+The built component are in `/components` which can be imported and used as mentioned in the section [2.2.3 Import the components](?path=/story/guide-2-using-the-library--page#223-import-the-components)
+
+If you want to test with other project, check out [npm link](https://docs.npmjs.com/cli/v6/commands/npm-link)
+
+## 3.4 Submit a PR
+
+Please folk our repos and [create a PR](https://github.com/electinth/common/pulls) explaining your changes.
+
+Happy coding!
+
+![Cat coding](https://media.giphy.com/media/7NoNw4pMNTvgc/giphy-downsized.gif)
