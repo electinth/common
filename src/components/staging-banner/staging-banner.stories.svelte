@@ -1,14 +1,13 @@
 <script>
   import { Meta, Template, Story } from '@storybook/addon-svelte-csf';
   import StagingBanner from './staging-banner.wc.svelte';
-
 </script>
 
 <Meta
   title="Components/staging-banner"
   component={StagingBanner}
   argTypes={{
-    productionurl: { control: 'text' },
+    productionUrl: { control: 'text' },
   }}
 />
 
@@ -19,6 +18,6 @@
 <Story
   name="Primary"
   args={{
-    productionurl: '',
+    productionUrl: '',
   }}
 />
