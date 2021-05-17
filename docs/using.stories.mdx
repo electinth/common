@@ -25,9 +25,9 @@ font-weight: 900;
 
 ## 2.2 Web Components
 
-Web components are published on [Github Packages repository](https://github.com/features/packages), We considered it over NPM because the package will belong to the github repository, not individual NPM account. Drawback is more configuration are required.
+Web components, or Custom Elements, are published on [Github Packages repository](https://github.com/features/packages). We considered it over NPM because the package will belong to the github repository, not individual NPM account, but more configurations are required.
 
-### 2.2.1 Config NPM
+### 2.2.1 Config Github Packages in NPM
 
 Add `.npmrc` file at the root of your project (same directory with `node_modules`), and config packages with @electinth scope to use Gitgub Packages repository.
 
@@ -66,16 +66,19 @@ For example:
 
 - **React**: `src/App.js`
 - **Sapper**: `src/client.ts`
-- **Nuxt**: Create [client-side plugin](https://nuxtjs.org/docs/2.x/directory-structure/plugins#client-or-server-side-only)
+- **Nuxt**: Create a [client-side plugin](https://nuxtjs.org/docs/2.x/directory-structure/plugins#client-or-server-side-only)
 
-### 2.2.4 Using the Components
+### 2.2.4 Using the components
 
-Elect components can be used with `elect-` prefix. For example with `navbar` component:
+Elect components can be used with `elect-` prefix.
+
+- Component props in Svelte code and Storybook use `camelCase` (propName) but Custom Element require `kebab-case` (prop-name) attribute
+- Custom Element cannot be self-closed (even without slot) [more info](https://stackoverflow.com/questions/45418556/whats-the-reason-behind-not-allowing-self-closing-tag-in-custom-element-in-spec)
+
+For example with `navbar` component:
 
 ```html
-<elect-navbar title="PROJECT NAME">
-  <!-- slot -->
-</elect-navbar>
+<elect-navbar title-text="PROJECT NAME"></elect-navbar>
 ```
 
 Available components and coresponded properties can be found in the **COMPONENTS** section on the left panel.
