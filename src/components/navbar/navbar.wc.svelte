@@ -5,11 +5,12 @@
   export let dark: boolean = false;
   export let logoUrl: string = '';
   export let showSlotInNewRowOnMobile: boolean = false;
+
 </script>
 
 <div
-  class="flex bg-white {showSlotInNewRowOnMobile
-    ? 'flex-col md:flex-row'
+  class="flex bg-white md:flex-row {showSlotInNewRowOnMobile
+    ? 'flex-col'
     : 'flex-row'} {dark ? 'bg-black' : 'bg-white'}"
 >
   <div class="flex my-auto p-3 h-10 md:(flex-1 h-12)">
