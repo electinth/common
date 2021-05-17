@@ -1,7 +1,6 @@
 <script>
   import { Meta, Template, Story } from '@storybook/addon-svelte-csf';
   import SocialSharer from './sharer.wc.svelte';
-
 </script>
 
 <Meta
@@ -10,7 +9,7 @@
   argTypes={{
     url: { control: 'text' },
     light: { control: 'boolean' },
-    hidelabel: { control: 'boolean' },
+    hideLabel: { control: 'boolean' },
     vertical: { control: 'boolean' },
   }}
 />
