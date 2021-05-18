@@ -3,15 +3,21 @@ import { build } from 'esbuild';
 import esbuildSvelte from 'esbuild-svelte';
 import sveltePreprocess from 'svelte-preprocess';
 import { windi } from 'svelte-windicss-preprocess';
+import { writeFileSync } from 'fs';
+import { join } from 'path';
 
-glob('src/components/**/*.wc.svelte').then((components) =>
-  components.forEach((entry) =>
+const OUTPUT_DIR = 'components';
+
+glob('src/components/**/*.wc.svelte').then((components) => {
+  const buildData = components.map((component) => ({
+    entry: component,
+    output: component.split('/').reverse()[0].replace('.wc.svelte', '.js'),
+  }));
+
+  buildData.forEach(({ entry, output }) =>
     build({
       entryPoints: [entry],
-      outfile: `components/${entry
-        .split('/')
-        .reverse()[0]
-        .replace('.wc.svelte', '.js')}`,
+      outfile: join(OUTPUT_DIR, output),
       bundle: true,
       inject: ['src/utils/custom-element.js'],
       plugins: [
@@ -27,5 +33,10 @@ glob('src/components/**/*.wc.svelte').then((components) =>
         }),
       ],
     }).catch(() => process.exit(1)),
-  ),
-);
+  );
+
+  writeFileSync(
+    join(OUTPUT_DIR, 'index.js'),
+    buildData.map(({ output }) => `import './${output}';\n`).join(''),
+  );
+});

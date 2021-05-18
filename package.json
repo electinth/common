@@ -5,12 +5,13 @@
   "repository": "https://github.com/electinth/common.git",
   "author": "Th1nkK1D <witheep@gmail.com>",
   "license": "MIT",
+  "main": "components/index.js",
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "create": "hygen component new",
     "lint": "eslint . --fix",
-    "build:components": "rm -rf components && node esbuild.mjs",
+    "build:components": "rm -rf components && mkdir components && node esbuild.mjs",
     "build:assets": "rm -rf assets && cp -rf src/assets assets && esbuild src/assets/typography.css --outdir=assets --minify",
     "build": "npm run build:components && npm run build:assets"
   },
