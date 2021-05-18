@@ -58,6 +58,7 @@
       `,
     },
   ];
+
 </script>
 
 <div
@@ -85,3 +86,6 @@
     </a>
   {/each}
 </div>
+
+<style windi:preflights>
+</style>

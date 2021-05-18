@@ -2,6 +2,7 @@
 
 <script lang="ts">
   let productionUrl: string = '';
+
 </script>
 
 <div class="bg-gray-600 text-white text-xs font-body px-4 py-2">
@@ -38,3 +39,6 @@
     </a>
   {/if}
 </div>
+
+<style windi:preflights>
+</style>

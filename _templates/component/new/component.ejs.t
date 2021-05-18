@@ -10,3 +10,6 @@ to: src/components/<%= h.changeCase.param(componentName) %>/<%= h.changeCase.par
 <div>
   elect-<%= h.changeCase.param(componentName) %> with someprop = {someprop}
 </div>
+
+<style windi:preflights>
+</style>
