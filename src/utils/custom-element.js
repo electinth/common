@@ -11,9 +11,11 @@ export const customElements = {
       }
 
       attributeChangedCallback(attrName, oldValue, newValue) {
-        console.log(tagName, attrName, oldValue, newValue);
-        attrName = attrName.replace(/-([a-z])/g, (_, up) => up.toUpperCase());
-        super.attributeChangedCallback(attrName, oldValue, newValue);
+        super.attributeChangedCallback(
+          attrName.replace(/-([a-z])/g, (_, up) => up.toUpperCase()),
+          oldValue,
+          newValue === '' ? true : newValue, // Value of omitted value attribute will be true
+        );
       }
     }
 
