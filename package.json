@@ -1,6 +1,6 @@
 {
   "name": "@electinth/common",
-  "version": "1.2.3",
+  "version": "2.0.0",
   "description": "ELECT's reusable component repository",
   "repository": "https://github.com/electinth/common.git",
   "author": "Th1nkK1D <witheep@gmail.com>",
@@ -11,7 +11,7 @@
     "create": "hygen component new",
     "lint": "eslint . --fix",
     "build:components": "rm -rf components && node esbuild.mjs",
-    "build:assets": "cp -rf src/assets assets && postcss assets/*.css --replace",
+    "build:assets": "rm -rf assets && cp -rf src/assets assets && esbuild src/assets/typography.css --outdir=assets --minify",
     "build": "npm run build:components && npm run build:assets"
   },
   "devDependencies": {
@@ -25,7 +25,6 @@
     "@typescript-eslint/eslint-plugin": "^4.16.1",
     "@typescript-eslint/parser": "^4.16.1",
     "babel-loader": "^8.2.2",
-    "cssnano": "^4.1.10",
     "esbuild": "^0.11.19",
     "esbuild-svelte": "^0.5.1",
     "eslint": "^7.20.0",
@@ -34,8 +33,6 @@
     "husky": "=4",
     "hygen": "^6.0.4",
     "lint-staged": ">=10",
-    "postcss": "^8.2.6",
-    "postcss-cli": "^8.3.1",
     "prettier": "^2.2.1",
     "svelte": "^3.38.2",
     "svelte-loader": "^3.1.1",
@@ -54,6 +51,7 @@
     "**/*": "prettier --write --ignore-unknown"
   },
   "files": [
-    "components/**/*"
+    "components/**/*",
+    "assets/**/*"
   ]
 }
