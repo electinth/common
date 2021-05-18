@@ -7,7 +7,7 @@
   "license": "MIT",
   "main": "components/index.js",
   "scripts": {
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006 --no-manager-cache",
     "build-storybook": "build-storybook",
     "create": "hygen component new",
     "lint": "eslint . --fix",
