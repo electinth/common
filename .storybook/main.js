@@ -1,5 +1,5 @@
 const sveltePreprocess = require('svelte-preprocess');
-const svelteWindi = require('svelte-windicss-preprocess');
+const { windi } = require('svelte-windicss-preprocess');
 
 module.exports = {
   stories: [
@@ -12,6 +12,6 @@ module.exports = {
     '@storybook/addon-svelte-csf',
   ],
   svelteOptions: {
-    preprocess: [sveltePreprocess(), svelteWindi.preprocess()],
+    preprocess: [sveltePreprocess(), windi({ configPath: 'windi.config.js' })],
   },
 };
