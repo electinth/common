@@ -1,7 +1,4 @@
-// windi.config.ts
-import { defineConfig } from 'windicss/helpers';
-
-export default defineConfig({
+module.exports = {
   theme: {
     extend: {
       fontFamily: {
@@ -11,4 +8,4 @@ export default defineConfig({
       },
     },
   },
-});
+};

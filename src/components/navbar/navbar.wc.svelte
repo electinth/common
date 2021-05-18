@@ -72,3 +72,6 @@
     <slot />
   </div>
 </div>
+
+<style windi:preflights>
+</style>
