@@ -1,8 +1,8 @@
-name: Publish Package
+name: Update document
 
 on:
-  release:
-    types: [created]
+  push:
+    branches: [main]
 
 jobs:
   publish:
@@ -14,7 +14,8 @@ jobs:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
       - run: yarn install
-      - run: yarn build
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - run: yarn build-storybook
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./storybook-static
